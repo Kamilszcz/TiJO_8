@@ -8,6 +8,9 @@ describe('reverseNumber', function ()
     it('should return reversed number', function(){
         expect(app.reverseNumber(123)).to.eql(321);
     });
+    it('should return false when argument is string', function(){
+        expect(app.reverseNumber('Kamik')).to.eql(false);
+    });
 });
 
 describe('returnOnlyLetter', function ()
@@ -15,11 +18,17 @@ describe('returnOnlyLetter', function ()
     it('should return letters froom argument', function(){
         expect(app.returnOnlyLetter('kamil123')).to.eql('kamil');
     });
+    it('should return false when argument is number', function(){
+        expect(app.returnOnlyLetter(77)).to.eql(false);
+    });
 });
 
 describe('isEmail', function ()
 {
     it('should return true when argument is email', function(){
         expect(app.isEmail('kamil123@gmail.com')).to.eql(true);
+    });
+    it('should return false when argument is not email', function(){
+        expect(app.isEmail('kamil123')).to.eql(false);
     });
 });
